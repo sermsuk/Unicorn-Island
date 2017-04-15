@@ -1,6 +1,7 @@
 package nz.ac.aut.ense701.gui;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import nz.ac.aut.ense701.gameModel.Game;
@@ -40,30 +41,34 @@ public class GridSquarePanel extends javax.swing.JPanel
         boolean squareExplored = game.isExplored(row, column);
         
         Color      color;
+        ImageIcon     image;
         
         switch ( terrain )
         {
-            case SAND     : color = Color.YELLOW; break;
-            case FOREST   : color = Color.GREEN;  break;
-            case WETLAND : color = Color.BLUE; break;
-            case SCRUB : color = Color.DARK_GRAY;   break;
-            case WATER    : color = Color.CYAN;   break;
-            default  : color = Color.LIGHT_GRAY; break;
+            case SAND     : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/sand.jpg")); break;
+            case FOREST   : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass.jpg")); break;
+            case WETLAND  : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/wetland.jpg")); break;
+            case SCRUB    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub.jpg")); break;
+            case WATER    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/water.jpg")); break;
+            default       : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/gray.jpg")); break; 
         }
         
         if ( squareExplored || squareVisible )
         {
             // Set the text of the JLabel according to the occupant
             lblText.setText(game.getOccupantStringRepresentation(row,column));
+            lblText.setHorizontalTextPosition((int) CENTER_ALIGNMENT);
+            lblText.setVerticalTextPosition((int) CENTER_ALIGNMENT);
+            
+            setVisible(true);
             // Set the colour. 
             if ( squareVisible && !squareExplored ) 
             {
                 // When explored the colour is brighter
-                color = new Color(Math.min(255, color.getRed()   + 128), 
-                                  Math.min(255, color.getGreen() + 128), 
-                                  Math.min(255, color.getBlue()  + 128));
+
+                
             }
-            lblText.setBackground(color);
+            lblText.setIcon(image);
             // set border colour according to 
             // whether the player is in the grid square or not
             setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
