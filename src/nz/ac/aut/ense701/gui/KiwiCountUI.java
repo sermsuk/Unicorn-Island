@@ -311,7 +311,7 @@ public class KiwiCountUI
         pnlMovement.setBorder(javax.swing.BorderFactory.createTitledBorder("Movement"));
         pnlMovement.setLayout(new java.awt.GridBagLayout());
 
-        btnMoveNorth.setText("N");
+        btnMoveNorth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/uparrow.png"))); // NOI18N
         btnMoveNorth.setFocusable(false);
         btnMoveNorth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,7 +327,7 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlMovement.add(btnMoveNorth, gridBagConstraints);
 
-        btnMoveSouth.setText("S");
+        btnMoveSouth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/downarrow.png"))); // NOI18N
         btnMoveSouth.setFocusable(false);
         btnMoveSouth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -343,7 +343,7 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlMovement.add(btnMoveSouth, gridBagConstraints);
 
-        btnMoveEast.setText("E");
+        btnMoveEast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/rightarrow.png"))); // NOI18N
         btnMoveEast.setFocusable(false);
         btnMoveEast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -359,7 +359,7 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlMovement.add(btnMoveEast, gridBagConstraints);
 
-        btnMoveWest.setText("W");
+        btnMoveWest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/leftarrow.png"))); // NOI18N
         btnMoveWest.setFocusable(false);
         btnMoveWest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -528,7 +528,7 @@ public class KiwiCountUI
         pnlControls.add(pnlObjects, gridBagConstraints);
 
         pnlContent.add(pnlControls);
-        pnlControls.setBounds(544, 10, 279, 618);
+        pnlControls.setBounds(544, 10, 267, 618);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
         pnlContent.add(jLabel1);

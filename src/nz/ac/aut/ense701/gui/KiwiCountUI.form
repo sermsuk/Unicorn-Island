@@ -290,7 +290,9 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="btnMoveNorth">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="N"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/uparrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -304,7 +306,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMoveSouth">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="S"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/downarrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -318,7 +322,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMoveEast">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="E"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/rightarrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -332,7 +338,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMoveWest">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="W"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/leftarrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
