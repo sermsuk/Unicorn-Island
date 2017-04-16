@@ -54,7 +54,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="540" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="511" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -119,6 +119,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="lblPlayerName">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="14" style="1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Name:"/>
                       </Properties>
                       <AuxValues>
@@ -133,6 +136,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="txtPlayerName">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="14" style="0"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Player Name"/>
                       </Properties>
                       <Constraints>
@@ -143,6 +149,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPlayerStamina">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="14" style="1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Stamina:"/>
                       </Properties>
                       <AuxValues>
@@ -167,6 +176,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblBackpackWeight">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="14" style="1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Backpack Weight:"/>
                       </Properties>
                       <AuxValues>
@@ -191,6 +203,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblBackpackSize">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="14" style="1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Backpack Size:"/>
                       </Properties>
                       <AuxValues>
@@ -215,6 +230,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblPredators">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="14" style="1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Predators Left:"/>
                       </Properties>
                       <Constraints>
@@ -225,6 +243,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblKiwisCounted">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="14" style="1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Kiwis Counted :"/>
                       </Properties>
                       <Constraints>
@@ -235,6 +256,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="txtKiwisCounted">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="11" style="0"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                       <Constraints>
@@ -245,6 +269,9 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="txtPredatorsLeft">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="11" style="0"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="P"/>
                       </Properties>
                       <Constraints>
@@ -279,7 +306,12 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="btnMoveNorth">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="N"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/uparrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -293,7 +325,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMoveSouth">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="S"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/downarrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -307,7 +344,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMoveEast">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="E"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/rightarrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -321,7 +363,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMoveWest">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="W"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/nz/ac/aut/ense701/image/leftarrow.png"/>
+                    </Property>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -371,6 +418,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JList" name="listInventory">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="12" style="1"/>
+                        </Property>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                           <StringArray count="3">
                             <StringItem index="0" value="Item 1"/>
@@ -389,6 +439,9 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="btnDrop">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Drop"/>
                   </Properties>
                   <Events>
@@ -402,6 +455,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnUse">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Use"/>
                   </Properties>
                   <Events>
@@ -449,6 +505,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JList" name="listObjects">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tempus Sans ITC" size="12" style="1"/>
+                        </Property>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                           <StringArray count="3">
                             <StringItem index="0" value="Item 1"/>
@@ -467,6 +526,9 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="btnCollect">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Collect"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -490,6 +552,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnCount">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tempus Sans ITC" size="14" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Count"/>
                   </Properties>
                   <Events>

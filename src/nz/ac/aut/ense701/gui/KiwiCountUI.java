@@ -7,8 +7,6 @@ import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 /*
  * User interface form for Kiwi Island.
@@ -19,7 +17,7 @@ import java.awt.event.KeyListener;
 
 public class KiwiCountUI 
     extends javax.swing.JFrame 
-    implements GameEventListener, KeyListener
+    implements GameEventListener
 {
 
     /**
@@ -32,7 +30,6 @@ public class KiwiCountUI
        // Sound sound = new Sound();
         this.game = game;
         setAsGameListener();
-        setKeyListener();
         initComponents();
         initIslandGrid();
         update();
@@ -77,45 +74,6 @@ public class KiwiCountUI
     {
        game.addGameEventListener(this); 
     }
-     
-     
-    
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        System.out.println("Key Pressed");
-    }
-
-    @Override
-     public void keyReleased(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_RIGHT:
-                game.playerMove(MoveDirection.EAST);
-                break;
-            case KeyEvent.VK_LEFT:
-                game.playerMove(MoveDirection.WEST);
-                break;
-            case KeyEvent.VK_DOWN:
-                game.playerMove(MoveDirection.SOUTH);
-                break;
-            case KeyEvent.VK_UP:
-                game.playerMove(MoveDirection.NORTH);
-                break;
-            default:
-                break; 
-        }
-    }
-     
-     private void setKeyListener() {
-        addKeyListener(this);
-        setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
-     }
-     
      
     /**
      * Updates the state of the UI based on the state of the game.
@@ -220,7 +178,7 @@ public class KiwiCountUI
         pnlIsland.setLayout(pnlIslandLayout);
         pnlIslandLayout.setHorizontalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGap(0, 511, Short.MAX_VALUE)
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,12 +195,14 @@ public class KiwiCountUI
         pnlPlayerData.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         pnlPlayerData.setLayout(new java.awt.GridBagLayout());
 
+        lblPlayerName.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         lblPlayerName.setText("Name:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weighty = 1.0;
         pnlPlayerData.add(lblPlayerName, gridBagConstraints);
 
+        txtPlayerName.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         txtPlayerName.setText("Player Name");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -251,6 +211,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
         pnlPlayerData.add(txtPlayerName, gridBagConstraints);
 
+        lblPlayerStamina.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         lblPlayerStamina.setText("Stamina:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -270,6 +231,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         pnlPlayerData.add(progPlayerStamina, gridBagConstraints);
 
+        lblBackpackWeight.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         lblBackpackWeight.setText("Backpack Weight:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -289,6 +251,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         pnlPlayerData.add(progBackpackWeight, gridBagConstraints);
 
+        lblBackpackSize.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         lblBackpackSize.setText("Backpack Size:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -308,6 +271,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         pnlPlayerData.add(progBackpackSize, gridBagConstraints);
 
+        lblPredators.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         lblPredators.setText("Predators Left:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -315,6 +279,7 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(lblPredators, gridBagConstraints);
 
+        lblKiwisCounted.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         lblKiwisCounted.setText("Kiwis Counted :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -322,6 +287,7 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(lblKiwisCounted, gridBagConstraints);
 
+        txtKiwisCounted.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
         txtKiwisCounted.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -329,6 +295,7 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(txtKiwisCounted, gridBagConstraints);
 
+        txtPredatorsLeft.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
         txtPredatorsLeft.setText("P");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -349,7 +316,8 @@ public class KiwiCountUI
         pnlMovement.setBorder(javax.swing.BorderFactory.createTitledBorder("Movement"));
         pnlMovement.setLayout(new java.awt.GridBagLayout());
 
-        btnMoveNorth.setText("N");
+        btnMoveNorth.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnMoveNorth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/uparrow.png"))); // NOI18N
         btnMoveNorth.setFocusable(false);
         btnMoveNorth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,7 +333,8 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlMovement.add(btnMoveNorth, gridBagConstraints);
 
-        btnMoveSouth.setText("S");
+        btnMoveSouth.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnMoveSouth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/downarrow.png"))); // NOI18N
         btnMoveSouth.setFocusable(false);
         btnMoveSouth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -381,7 +350,8 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlMovement.add(btnMoveSouth, gridBagConstraints);
 
-        btnMoveEast.setText("E");
+        btnMoveEast.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnMoveEast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/rightarrow.png"))); // NOI18N
         btnMoveEast.setFocusable(false);
         btnMoveEast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -397,7 +367,8 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlMovement.add(btnMoveEast, gridBagConstraints);
 
-        btnMoveWest.setText("W");
+        btnMoveWest.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnMoveWest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/leftarrow.png"))); // NOI18N
         btnMoveWest.setFocusable(false);
         btnMoveWest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -424,6 +395,7 @@ public class KiwiCountUI
         pnlInventory.setBorder(javax.swing.BorderFactory.createTitledBorder("Inventory"));
         pnlInventory.setLayout(new java.awt.GridBagLayout());
 
+        listInventory.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         listInventory.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3" };
             public int getSize() { return strings.length; }
@@ -448,6 +420,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlInventory.add(scrlInventory, gridBagConstraints);
 
+        btnDrop.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         btnDrop.setText("Drop");
         btnDrop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -464,6 +437,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlInventory.add(btnDrop, gridBagConstraints);
 
+        btnUse.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         btnUse.setText("Use");
         btnUse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -494,6 +468,7 @@ public class KiwiCountUI
         pnlObjectsLayout.rowHeights = new int[] {0, 5, 0};
         pnlObjects.setLayout(pnlObjectsLayout);
 
+        listObjects.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         listObjects.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3" };
             public int getSize() { return strings.length; }
@@ -519,6 +494,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlObjects.add(scrlObjects, gridBagConstraints);
 
+        btnCollect.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         btnCollect.setText("Collect");
         btnCollect.setToolTipText("");
         btnCollect.setMaximumSize(new java.awt.Dimension(61, 23));
@@ -539,6 +515,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlObjects.add(btnCollect, gridBagConstraints);
 
+        btnCount.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         btnCount.setText("Count");
         btnCount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
