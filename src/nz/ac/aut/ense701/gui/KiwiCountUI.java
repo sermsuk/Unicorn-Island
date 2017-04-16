@@ -166,12 +166,13 @@ public class KiwiCountUI
         listObjects = new javax.swing.JList();
         btnCollect = new javax.swing.JButton();
         btnCount = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiwi Count");
 
         pnlContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        pnlContent.setLayout(new java.awt.BorderLayout(10, 0));
+        pnlContent.setLayout(null);
 
         javax.swing.GroupLayout pnlIslandLayout = new javax.swing.GroupLayout(pnlIsland);
         pnlIsland.setLayout(pnlIslandLayout);
@@ -184,13 +185,16 @@ public class KiwiCountUI
             .addGap(0, 618, Short.MAX_VALUE)
         );
 
-        pnlContent.add(pnlIsland, java.awt.BorderLayout.CENTER);
+        pnlContent.add(pnlIsland);
+        pnlIsland.setBounds(10, 10, 524, 618);
 
         pnlControls.setLayout(new java.awt.GridBagLayout());
 
+        pnlPlayer.setBackground(new java.awt.Color(64, 143, 228));
         pnlPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder("Player"));
         pnlPlayer.setLayout(new java.awt.BorderLayout());
 
+        pnlPlayerData.setBackground(new java.awt.Color(64, 143, 228));
         pnlPlayerData.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         pnlPlayerData.setLayout(new java.awt.GridBagLayout());
 
@@ -303,6 +307,7 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 0.5;
         pnlControls.add(pnlPlayer, gridBagConstraints);
 
+        pnlMovement.setBackground(new java.awt.Color(64, 143, 228));
         pnlMovement.setBorder(javax.swing.BorderFactory.createTitledBorder("Movement"));
         pnlMovement.setLayout(new java.awt.GridBagLayout());
 
@@ -378,6 +383,7 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 0.5;
         pnlControls.add(pnlMovement, gridBagConstraints);
 
+        pnlInventory.setBackground(new java.awt.Color(107, 176, 245));
         pnlInventory.setBorder(javax.swing.BorderFactory.createTitledBorder("Inventory"));
         pnlInventory.setLayout(new java.awt.GridBagLayout());
 
@@ -445,6 +451,7 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlControls.add(pnlInventory, gridBagConstraints);
 
+        pnlObjects.setBackground(new java.awt.Color(107, 176, 245));
         pnlObjects.setBorder(javax.swing.BorderFactory.createTitledBorder("Objects"));
         java.awt.GridBagLayout pnlObjectsLayout = new java.awt.GridBagLayout();
         pnlObjectsLayout.columnWidths = new int[] {0, 5, 0};
@@ -520,7 +527,12 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlControls.add(pnlObjects, gridBagConstraints);
 
-        pnlContent.add(pnlControls, java.awt.BorderLayout.EAST);
+        pnlContent.add(pnlControls);
+        pnlControls.setBounds(544, 10, 279, 618);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
+        pnlContent.add(jLabel1);
+        jLabel1.setBounds(0, 0, 830, 640);
 
         getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
 
@@ -611,6 +623,7 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblKiwisCounted;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
