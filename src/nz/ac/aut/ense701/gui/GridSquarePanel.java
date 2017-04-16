@@ -1,6 +1,7 @@
 package nz.ac.aut.ense701.gui;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import nz.ac.aut.ense701.gameModel.Game;
@@ -21,6 +22,8 @@ public class GridSquarePanel extends javax.swing.JPanel
      * @param row the row to represent
      * @param column the column to represent
      */
+    
+    
     public GridSquarePanel(Game game, int row, int column)
     {
         this.game   = game;
@@ -68,12 +71,14 @@ public class GridSquarePanel extends javax.swing.JPanel
             // whether the player is in the grid square or not
             setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
         }
+
         else
         {
             lblText.setText("");
             lblText.setBackground(null);
             setBorder(normalBorder);
         }
+        
     }
     
     /** This method is called from within the constructor to
@@ -93,6 +98,7 @@ public class GridSquarePanel extends javax.swing.JPanel
         lblText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblText.setText("content");
+        lblText.setMaximumSize(new java.awt.Dimension(253, 180));
         lblText.setOpaque(true);
         add(lblText, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents

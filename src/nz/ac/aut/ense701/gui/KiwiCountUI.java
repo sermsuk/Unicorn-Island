@@ -7,6 +7,8 @@ import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /*
  * User interface form for Kiwi Island.
@@ -17,7 +19,7 @@ import nz.ac.aut.ense701.gameModel.MoveDirection;
 
 public class KiwiCountUI 
     extends javax.swing.JFrame 
-    implements GameEventListener
+    implements GameEventListener, KeyListener
 {
 
     /**
@@ -27,8 +29,10 @@ public class KiwiCountUI
     public KiwiCountUI(Game game) 
     {
         assert game != null : "Make sure game object is created before UI";
+       // Sound sound = new Sound();
         this.game = game;
         setAsGameListener();
+        setKeyListener();
         initComponents();
         initIslandGrid();
         update();
@@ -73,6 +77,45 @@ public class KiwiCountUI
     {
        game.addGameEventListener(this); 
     }
+     
+     
+    
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        System.out.println("Key Pressed");
+    }
+
+    @Override
+     public void keyReleased(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_RIGHT:
+                game.playerMove(MoveDirection.EAST);
+                break;
+            case KeyEvent.VK_LEFT:
+                game.playerMove(MoveDirection.WEST);
+                break;
+            case KeyEvent.VK_DOWN:
+                game.playerMove(MoveDirection.SOUTH);
+                break;
+            case KeyEvent.VK_UP:
+                game.playerMove(MoveDirection.NORTH);
+                break;
+            default:
+                break; 
+        }
+    }
+     
+     private void setKeyListener() {
+        addKeyListener(this);
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
+     }
+     
      
     /**
      * Updates the state of the UI based on the state of the game.
@@ -171,7 +214,7 @@ public class KiwiCountUI
         setTitle("Kiwi Count");
 
         pnlContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        pnlContent.setLayout(new java.awt.BorderLayout(10, 0));
+        pnlContent.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout pnlIslandLayout = new javax.swing.GroupLayout(pnlIsland);
         pnlIsland.setLayout(pnlIslandLayout);
@@ -625,4 +668,9 @@ public class KiwiCountUI
     // End of variables declaration//GEN-END:variables
 
     private Game game;
+
 }
+
+
+  
+    
