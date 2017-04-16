@@ -182,7 +182,7 @@ public class KiwiCountUI
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 604, Short.MAX_VALUE)
         );
 
         pnlContent.add(pnlIsland, java.awt.BorderLayout.CENTER);
@@ -287,7 +287,7 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(lblKiwisCounted, gridBagConstraints);
 
-        txtKiwisCounted.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
+        txtKiwisCounted.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         txtKiwisCounted.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -295,7 +295,7 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(txtKiwisCounted, gridBagConstraints);
 
-        txtPredatorsLeft.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
+        txtPredatorsLeft.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         txtPredatorsLeft.setText("P");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -395,7 +395,7 @@ public class KiwiCountUI
         pnlInventory.setBorder(javax.swing.BorderFactory.createTitledBorder("Inventory"));
         pnlInventory.setLayout(new java.awt.GridBagLayout());
 
-        listInventory.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        listInventory.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         listInventory.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3" };
             public int getSize() { return strings.length; }
@@ -420,7 +420,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlInventory.add(scrlInventory, gridBagConstraints);
 
-        btnDrop.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnDrop.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnDrop.setText("Drop");
         btnDrop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -437,7 +437,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlInventory.add(btnDrop, gridBagConstraints);
 
-        btnUse.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnUse.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnUse.setText("Use");
         btnUse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -468,7 +468,7 @@ public class KiwiCountUI
         pnlObjectsLayout.rowHeights = new int[] {0, 5, 0};
         pnlObjects.setLayout(pnlObjectsLayout);
 
-        listObjects.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        listObjects.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         listObjects.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3" };
             public int getSize() { return strings.length; }
@@ -494,7 +494,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlObjects.add(scrlObjects, gridBagConstraints);
 
-        btnCollect.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnCollect.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnCollect.setText("Collect");
         btnCollect.setToolTipText("");
         btnCollect.setMaximumSize(new java.awt.Dimension(61, 23));
@@ -515,7 +515,7 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlObjects.add(btnCollect, gridBagConstraints);
 
-        btnCount.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnCount.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnCount.setText("Count");
         btnCount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
