@@ -6,6 +6,7 @@
 package nz.ac.aut.ense701.gameModel;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -29,10 +30,12 @@ public class Menu extends Canvas implements Runnable{
     private boolean running = false;
     private Thread thread;
     
+    
     private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
     private BufferedImage background = null;
+    private BufferedImage otherMenuBack = null;
     
-    private GameState state = GameState.MENU;
+    public static GameState state = GameState.MENU;
     
     //Menu buttons
     public Rectangle playBut = new Rectangle(270, 130, 85, 30);
@@ -64,6 +67,7 @@ public class Menu extends Canvas implements Runnable{
         BufferedImageLoader loader = new BufferedImageLoader();
         try{
            background = loader.loadImage("Home_menu.jpg");
+           otherMenuBack = loader.loadImage("Other_menu.jpg");
         }catch(IOException e){
         e.printStackTrace();
         }
@@ -137,8 +141,16 @@ public class Menu extends Canvas implements Runnable{
         Graphics g = bs.getDrawGraphics();
         
         //Renders everything from here to dispose();
-        g.drawImage(background, 0, 0, this);
-        menuItems(g);
+        if(state == GameState.MENU){
+            g.drawImage(background, 0, 0, this);
+            menuItems(g);
+        }else if(state == GameState.HIGHSCORE){
+            g.drawImage(otherMenuBack, 0, 0, this);
+            highscore(g);
+        }else if(state == GameState.DESCRIPTION){
+            g.drawImage(otherMenuBack, 0, 0, this);
+            Description(g);
+        }
         
         g.dispose();
         bs.show();
@@ -159,4 +171,39 @@ public class Menu extends Canvas implements Runnable{
         g2d.draw(exitBut);
     }
     
+    public void highscore(Graphics g ){
+        Graphics2D g2d = (Graphics2D) g;
+        
+        //draws title
+        Font font = new Font("ravie", Font.BOLD, 30);
+        g.setFont(font);
+        g.setColor(Color.BLACK);
+        g.drawString("HEIGHSCORE", 170, 40);
+        
+        //Creates and draws back button
+        Font font1 = new Font("ravie", Font.BOLD, 20);
+        g.setFont(font1);
+        Rectangle backBut = new Rectangle(500, 365, 85, 30);
+        g.drawString("Back", backBut.x + 5, backBut.y + 23);
+        g2d.draw(backBut);
+    }
+    
+    public void Description(Graphics g ){
+        Graphics2D g2d = (Graphics2D) g;
+        
+        //draws title
+        Font font = new Font("ravie", Font.BOLD, 30);
+        g.setFont(font);
+        g.setColor(Color.BLACK);
+        g.drawString("DESCRIPTION", 170, 40);
+        
+        //Creates and draws back button
+        Font font1 = new Font("ravie", Font.BOLD, 20);
+        g.setFont(font1);
+        Rectangle backBut = new Rectangle(500, 365, 85, 30);
+        g.drawString("Back", backBut.x + 5, backBut.y + 23);
+        g2d.draw(backBut);
+        
+        
+    }    
 }

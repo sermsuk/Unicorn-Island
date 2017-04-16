@@ -16,6 +16,7 @@ import nz.ac.aut.ense701.gameModel.Menu;
  * @author aoshi
  */
 public class MouseInput implements MouseListener{
+    Menu menu;
     
     @Override
     public void mouseClicked(MouseEvent me) {
@@ -24,11 +25,6 @@ public class MouseInput implements MouseListener{
     public void mousePressed(MouseEvent e) {
         int mx = e.getX();
         int my = e.getY();
-        
-        /*public Rectangle playBut = new Rectangle(270, 130, 85, 30);
-        public Rectangle hSBut = new Rectangle(210, 180, 220, 30);
-        public Rectangle desBut = new Rectangle(210, 230, 220, 30);
-        public Rectangle exitBut = new Rectangle(270, 280, 85, 30);*/
         
         //Play Button
         if(mx >= 270 && mx <= 355){
@@ -50,11 +46,35 @@ public class MouseInput implements MouseListener{
             }
         }
         
-        //exit Button
-        if(mx >= 270 && mx <= 355){
+        //Highscore Button
+        if(mx >= 210 && mx <= 430){
+            if(my >= 180 && my <= 210){
+                //Highscore button pressed
+                menu.state = GameState.HIGHSCORE;
+            }
+        }
+        
+        //Description Button
+        if(mx >= 210 && mx <= 430){
+            if(my >= 230 && my <= 250){
+                //Description button pressed
+                menu.state = GameState.DESCRIPTION;
+            }
+        }
+        
+        //Exit Button
+        if(mx >= 210 && mx <= 430){
             if(my >= 280 && my <= 310){
-                //exit button pressed
+                //Exit button pressed
                 System.exit(0);
+            }
+        }
+        
+        //Back Button
+        if(mx >= 500 && mx <= 585){
+            if(my >= 365 && my <= 395){
+                //Highscore button pressed
+                menu.state = GameState.MENU;
             }
         }
     }
