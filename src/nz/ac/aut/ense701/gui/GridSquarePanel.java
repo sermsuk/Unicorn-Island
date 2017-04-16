@@ -61,7 +61,36 @@ public class GridSquarePanel extends javax.swing.JPanel
             lblText.setVerticalTextPosition((int) CENTER_ALIGNMENT);
             
             setVisible(true);
-            // Set the colour. 
+            // Set the colour.
+            
+            if( squareExplored && row == 2 && column == 2) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/wetland2.jpg"));
+                lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+                lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
+                setVisible(true);
+            }
+            
+            if( squareExplored && row == 3 && column == 5 || squareExplored && row == 7 && column == 4 || squareExplored && row == 6 && column == 5 || squareExplored && row == 7 && column == 6) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass2.jpg"));
+                lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+                lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
+                setVisible(true);
+            }
+            
+            if( squareExplored && row == 1 && column == 4) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub2.jpg"));
+                lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+                lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
+                setVisible(true);
+            }
+            
+            if( squareExplored && row == 5 && column == 0) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/sand2.jpg"));
+                lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+                lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
+                setVisible(true);
+            }
+            
             if ( squareVisible && !squareExplored ) 
             {
                 // When explored the colour is brighter
@@ -76,7 +105,7 @@ public class GridSquarePanel extends javax.swing.JPanel
         else
         {
             lblText.setText("");
-            lblText.setBackground(null);
+            lblText.setIcon(null);
             setBorder(normalBorder);
         }
     }
