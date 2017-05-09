@@ -1,7 +1,9 @@
 package nz.ac.aut.ense701.gui;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
@@ -19,7 +21,7 @@ public class KiwiCountUI
     extends javax.swing.JFrame 
     implements GameEventListener
 {
-
+    Dimension screensize = new Dimension(830, 670);
     /**
      * Creates a GUI for the KiwiIsland game.
      * @param game the game object to represent with this GUI.
@@ -28,6 +30,13 @@ public class KiwiCountUI
     {
         assert game != null : "Make sure game object is created before UI";
         this.game = game;
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        this.setPreferredSize(screensize);
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
         setAsGameListener();
         initComponents();
         initIslandGrid();
@@ -528,7 +537,7 @@ public class KiwiCountUI
         pnlControls.add(pnlObjects, gridBagConstraints);
 
         pnlContent.add(pnlControls);
-        pnlControls.setBounds(544, 10, 267, 618);
+        pnlControls.setBounds(544, 10, 263, 618);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
         pnlContent.add(jLabel1);
