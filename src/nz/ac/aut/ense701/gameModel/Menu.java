@@ -178,7 +178,7 @@ public class Menu extends Canvas implements Runnable{
         Font font = new Font("ravie", Font.BOLD, 30);
         g.setFont(font);
         g.setColor(Color.BLACK);
-        g.drawString("HIGHSCORE", 170, 40);
+        g.drawString("HEIGHSCORE", 170, 40);
         
         //Creates and draws back button
         Font font1 = new Font("ravie", Font.BOLD, 20);
