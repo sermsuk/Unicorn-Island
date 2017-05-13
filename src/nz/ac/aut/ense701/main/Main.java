@@ -30,6 +30,7 @@ public class Main
      */
     public static void main(String[] args) 
     {
+        System.out.print("asdfasf");
         Menu menu = new Menu();
         menu.Menu();
         
@@ -64,6 +65,7 @@ public class Main
                 e.printStackTrace();
             }
         }while(clip.isActive());
+       
     }
     
     
