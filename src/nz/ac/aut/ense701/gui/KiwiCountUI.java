@@ -238,6 +238,8 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         pnlPlayerData.add(lblPlayerStamina, gridBagConstraints);
 
+        progPlayerStamina.setBackground(new java.awt.Color(255, 0, 0));
+        progPlayerStamina.setForeground(new java.awt.Color(51, 255, 0));
         progPlayerStamina.setStringPainted(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -257,6 +259,8 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         pnlPlayerData.add(lblBackpackWeight, gridBagConstraints);
 
+        progBackpackWeight.setBackground(new java.awt.Color(0, 255, 0));
+        progBackpackWeight.setForeground(new java.awt.Color(255, 0, 0));
         progBackpackWeight.setStringPainted(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -276,6 +280,8 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         pnlPlayerData.add(lblBackpackSize, gridBagConstraints);
 
+        progBackpackSize.setBackground(new java.awt.Color(51, 255, 0));
+        progBackpackSize.setForeground(new java.awt.Color(255, 0, 0));
         progBackpackSize.setStringPainted(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -545,7 +551,7 @@ public class KiwiCountUI
         pnlControls.add(pnlObjects, gridBagConstraints);
 
         pnlContent.add(pnlControls);
-        pnlControls.setBounds(544, 10, 263, 618);
+        pnlControls.setBounds(544, 10, 279, 618);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
         pnlContent.add(jLabel1);

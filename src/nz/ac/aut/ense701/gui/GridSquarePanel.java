@@ -48,7 +48,7 @@ public class GridSquarePanel extends javax.swing.JPanel
         {
             case SAND     : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/sand.jpg")); break;
             case FOREST   : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass.jpg")); break;
-            case WETLAND  : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/wetland.jpg")); break;
+            case WETLAND  : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/forest.jpg")); break;
             case SCRUB    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub.jpg")); break;
             case WATER    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/water.jpg")); break;
             default       : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/gray.jpg")); break; 
@@ -65,7 +65,7 @@ public class GridSquarePanel extends javax.swing.JPanel
             // Set the colour. 
             
             if( squareExplored && row == 2 && column == 2) {
-                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/wetland2.jpg"));
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass2.jpg"));
                 lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
                 lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
                 setVisible(true);
@@ -79,14 +79,14 @@ public class GridSquarePanel extends javax.swing.JPanel
             }
             
             if( squareExplored && row == 1 && column == 4) {
-                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub2.jpg"));
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass2.jpg"));
                 lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
                 lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
                 setVisible(true);
             }
             
             if( squareExplored && row == 5 && column == 0) {
-                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/sand2.jpg"));
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass2.jpg"));
                 lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
                 lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
                 setVisible(true);
