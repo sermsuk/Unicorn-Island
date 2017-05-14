@@ -151,6 +151,7 @@ public class KiwiCountUI
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jProgressBar1 = new javax.swing.JProgressBar();
         javax.swing.JPanel pnlContent = new javax.swing.JPanel();
         pnlIsland = new javax.swing.JPanel();
         javax.swing.JPanel pnlControls = new javax.swing.JPanel();
@@ -173,17 +174,17 @@ public class KiwiCountUI
         btnMoveSouth = new javax.swing.JButton();
         btnMoveEast = new javax.swing.JButton();
         btnMoveWest = new javax.swing.JButton();
-        javax.swing.JPanel pnlInventory = new javax.swing.JPanel();
-        javax.swing.JScrollPane scrlInventory = new javax.swing.JScrollPane();
-        listInventory = new javax.swing.JList();
-        btnDrop = new javax.swing.JButton();
-        btnUse = new javax.swing.JButton();
         javax.swing.JPanel pnlObjects = new javax.swing.JPanel();
         javax.swing.JScrollPane scrlObjects = new javax.swing.JScrollPane();
         listObjects = new javax.swing.JList();
         btnCollect = new javax.swing.JButton();
         btnCount = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        javax.swing.JPanel pnlInventory = new javax.swing.JPanel();
+        javax.swing.JScrollPane scrlInventory = new javax.swing.JScrollPane();
+        listInventory = new javax.swing.JList();
+        btnDrop = new javax.swing.JButton();
+        btnUse = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiwi Count");
@@ -195,23 +196,25 @@ public class KiwiCountUI
         pnlIsland.setLayout(pnlIslandLayout);
         pnlIslandLayout.setHorizontalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGap(0, 810, Short.MAX_VALUE)
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
 
         pnlContent.add(pnlIsland);
-        pnlIsland.setBounds(10, 10, 524, 618);
+        pnlIsland.setBounds(10, 10, 810, 450);
 
         pnlControls.setLayout(new java.awt.GridBagLayout());
+        pnlContent.add(pnlControls);
+        pnlControls.setBounds(544, 10, 0, 618);
 
-        pnlPlayer.setBackground(new java.awt.Color(64, 143, 228));
+        pnlPlayer.setBackground(new java.awt.Color(107, 176, 245));
         pnlPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder("Player"));
         pnlPlayer.setLayout(new java.awt.BorderLayout());
 
-        pnlPlayerData.setBackground(new java.awt.Color(64, 143, 228));
+        pnlPlayerData.setBackground(new java.awt.Color(107, 176, 245));
         pnlPlayerData.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         pnlPlayerData.setLayout(new java.awt.GridBagLayout());
 
@@ -322,15 +325,10 @@ public class KiwiCountUI
 
         pnlPlayer.add(pnlPlayerData, java.awt.BorderLayout.WEST);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.5;
-        pnlControls.add(pnlPlayer, gridBagConstraints);
+        pnlContent.add(pnlPlayer);
+        pnlPlayer.setBounds(10, 460, 279, 173);
 
-        pnlMovement.setBackground(new java.awt.Color(64, 143, 228));
+        pnlMovement.setBackground(new java.awt.Color(107, 176, 245));
         pnlMovement.setBorder(javax.swing.BorderFactory.createTitledBorder("Movement"));
         pnlMovement.setLayout(new java.awt.GridBagLayout());
 
@@ -398,81 +396,8 @@ public class KiwiCountUI
         gridBagConstraints.weighty = 1.0;
         pnlMovement.add(btnMoveWest, gridBagConstraints);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.5;
-        pnlControls.add(pnlMovement, gridBagConstraints);
-
-        pnlInventory.setBackground(new java.awt.Color(107, 176, 245));
-        pnlInventory.setBorder(javax.swing.BorderFactory.createTitledBorder("Inventory"));
-        pnlInventory.setLayout(new java.awt.GridBagLayout());
-
-        listInventory.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        listInventory.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        listInventory.setVisibleRowCount(3);
-        listInventory.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listInventoryValueChanged(evt);
-            }
-        });
-        scrlInventory.setViewportView(listInventory);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlInventory.add(scrlInventory, gridBagConstraints);
-
-        btnDrop.setText("Drop");
-        btnDrop.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDropActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlInventory.add(btnDrop, gridBagConstraints);
-
-        btnUse.setText("Use");
-        btnUse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUseActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlInventory.add(btnUse, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        pnlControls.add(pnlInventory, gridBagConstraints);
+        pnlContent.add(pnlMovement);
+        pnlMovement.setBounds(290, 460, 160, 170);
 
         pnlObjects.setBackground(new java.awt.Color(107, 176, 245));
         pnlObjects.setBorder(javax.swing.BorderFactory.createTitledBorder("Objects"));
@@ -542,20 +467,75 @@ public class KiwiCountUI
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlObjects.add(btnCount, gridBagConstraints);
 
+        pnlContent.add(pnlObjects);
+        pnlObjects.setBounds(630, 460, 190, 170);
+
+        pnlInventory.setBackground(new java.awt.Color(107, 176, 245));
+        pnlInventory.setBorder(javax.swing.BorderFactory.createTitledBorder("Inventory"));
+        pnlInventory.setLayout(new java.awt.GridBagLayout());
+
+        listInventory.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        listInventory.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listInventory.setVisibleRowCount(3);
+        listInventory.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listInventoryValueChanged(evt);
+            }
+        });
+        scrlInventory.setViewportView(listInventory);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        pnlControls.add(pnlObjects, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlInventory.add(scrlInventory, gridBagConstraints);
 
-        pnlContent.add(pnlControls);
-        pnlControls.setBounds(544, 10, 279, 618);
+        btnDrop.setText("Drop");
+        btnDrop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDropActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlInventory.add(btnDrop, gridBagConstraints);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
-        pnlContent.add(jLabel1);
-        jLabel1.setBounds(0, 0, 830, 640);
+        btnUse.setText("Use");
+        btnUse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUseActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlInventory.add(btnUse, gridBagConstraints);
+
+        pnlContent.add(pnlInventory);
+        pnlInventory.setBounds(450, 460, 180, 170);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
+        pnlContent.add(background);
+        background.setBounds(0, 0, 830, 640);
 
         getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
 
@@ -638,6 +618,7 @@ public class KiwiCountUI
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JButton btnCollect;
     private javax.swing.JButton btnCount;
     private javax.swing.JButton btnDrop;
@@ -646,7 +627,7 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JLabel lblKiwisCounted;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
