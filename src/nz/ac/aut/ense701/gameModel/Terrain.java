@@ -15,6 +15,7 @@ public enum Terrain
     FOREST("*", 2.0),
     WETLAND ("#", 2.5),
     SCRUB("^", 3.0),
+    BRICK(">",3.5),
     WATER("~", 4.0);
     
     private final double difficulty;
