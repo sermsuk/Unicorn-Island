@@ -51,6 +51,7 @@ public class GridSquarePanel extends javax.swing.JPanel
             case WETLAND  : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/forest.jpg")); break;
             case SCRUB    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub.jpg")); break;
             case WATER    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/water.jpg")); break;
+            case BRICK    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/Brick.jpg")); break;
             default       : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/gray.jpg")); break; 
         }
         
