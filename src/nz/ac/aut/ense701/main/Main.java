@@ -1,5 +1,6 @@
 package nz.ac.aut.ense701.main;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javax.sound.sampled.AudioInputStream;
@@ -21,8 +22,6 @@ import nz.ac.aut.ense701.gui.KiwiCountUI;
  */
 public class Main 
 {
-    public static Mixer mixer;
-    public static Clip clip;
     /**
      * Main method of Kiwi Count.
      * 
@@ -30,40 +29,26 @@ public class Main
      */
     public static void main(String[] args) 
     {
-        System.out.print("asdfasf");
+        boolean musicLoop = true;
         Menu menu = new Menu();
         menu.Menu();
         
-        Mixer.Info[] mixInfos = AudioSystem.getMixerInfo();
-        mixer = AudioSystem.getMixer(mixInfos[0]);
-        
-        DataLine.Info dataInfo = new DataLine.Info(Clip.class, null);
-        try{
-            clip = (Clip)mixer.getLine(dataInfo);
-        }catch(LineUnavailableException e){
-            e.printStackTrace();
+        File bgMusic = new File("menusound.wav");
+        while(musicLoop = true){
+            playSound(bgMusic);
         }
         
+    }
+    
+    static void playSound(File sound){
         try{
-            URL soundURL = sun.applet.Main.class.getResource("/Music/menusound.wav");
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundURL);
-            clip.open(audioStream);
-        }catch(LineUnavailableException e){
-            e.printStackTrace();
-        }catch(UnsupportedAudioFileException e){
-           e.printStackTrace();
-        }catch(IOException e){
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(sound));
+            clip.start();
+            
+            Thread.sleep(clip.getMicrosecondLength()/1000);
+        }catch(Exception e){
             e.printStackTrace();
         }
-        
-        clip.start();
-        
-        do{
-            try{
-                Thread.sleep(50);
-            }catch(InterruptedException e){
-                e.printStackTrace();
-            }
-        }while(clip.isActive());
     }
 } 
