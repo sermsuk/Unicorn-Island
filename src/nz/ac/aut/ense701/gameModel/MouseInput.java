@@ -46,9 +46,19 @@ public class MouseInput implements MouseListener{
             }
         }
         
-        //Highscore Button
+        
+        //My Profile Button
+        
         if(mx >= 210 && mx <= 430){
             if(my >= 180 && my <= 210){
+                //My profile button pressed
+              menu.state = GameState.PLAYERPROFILE;
+            }
+        }
+
+        //Highscore Button
+        if(mx >= 210 && mx <= 430){
+            if(my >= 230 && my <= 250){
                 //Highscore button pressed
                 menu.state = GameState.HIGHSCORE;
             }
@@ -56,15 +66,15 @@ public class MouseInput implements MouseListener{
         
         //Description Button
         if(mx >= 210 && mx <= 430){
-            if(my >= 230 && my <= 250){
+            if(my >= 280 && my <= 310){
                 //Description button pressed
                 menu.state = GameState.DESCRIPTION;
             }
         }
         
         //Exit Button
-        if(mx >= 210 && mx <= 430){
-            if(my >= 280 && my <= 310){
+        if(mx >= 270 && mx <= 355){
+            if(my >= 330 && my <= 360){
                 //Exit button pressed
                 System.exit(0);
             }

@@ -8,6 +8,6 @@ package nz.ac.aut.ense701.gameModel;
  */
 public enum GameState
 {
-    MENU, HIGHSCORE, DESCRIPTION, PLAYING, WON, LOST;
+    MENU, HIGHSCORE, DESCRIPTION, PLAYERPROFILE, PLAYING, WON, LOST;
 
 }

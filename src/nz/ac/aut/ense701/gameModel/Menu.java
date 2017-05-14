@@ -8,6 +8,7 @@ package nz.ac.aut.ense701.gameModel;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -37,15 +38,17 @@ public class Menu extends Canvas implements Runnable{
     private BufferedImage desTab = null;
     JFrame frame = new JFrame(TITLE);
     JLabel desLabel = new JLabel();
+    Game game = new Game();
     Menu menu;
     
     public static GameState state;
     
     //Menu buttons
     public Rectangle playBut = new Rectangle(270, 130, 85, 30);
-    public Rectangle hSBut = new Rectangle(210, 180, 220, 30);
-    public Rectangle desBut = new Rectangle(210, 230, 220, 30);
-    public Rectangle exitBut = new Rectangle(270, 280, 85, 30);
+    public Rectangle profileBut = new Rectangle(210, 180, 220, 30);
+    public Rectangle hSBut = new Rectangle(210, 230, 220, 30);
+    public Rectangle desBut = new Rectangle(210, 280, 220, 30);
+    public Rectangle exitBut = new Rectangle(270, 330, 85, 30);
     
     public void Menu(){
         menu = new Menu();
@@ -169,10 +172,45 @@ public class Menu extends Canvas implements Runnable{
         }else if(state == GameState.DESCRIPTION){
             g.drawImage(desTab, 0, 0, this);
             Description(g);
+        } else if(state == GameState.PLAYERPROFILE) {
+            g.drawImage(otherMenuBack, 0, 0, this);
+            playerProfile(g);
         }
         
         g.dispose();
         bs.show();
+    }
+    
+    public void playerProfile(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        
+        String player = game.getPlayerName();
+        String hscore1 = "hscore1";
+        String hscore2 = "hscore2";
+        String hscore3 = "hscore3";
+        
+        state = GameState.PLAYERPROFILE;
+        
+        //draws title
+        Font font = new Font("ravie", Font.BOLD, 30);
+        g.setFont(font);
+        g.setColor(Color.BLACK);
+        g.drawString("MY PROFILE", 170, 40);
+        
+        //Creates and draws back button
+        Font font1 = new Font("ravie", Font.BOLD, 20);
+        g.setFont(font1);
+        Rectangle backBut = new Rectangle(500, 365, 85, 30);
+        g.drawString("Back", backBut.x + 5, backBut.y + 23);
+        g2d.draw(backBut);
+        
+        //add player name and personal highscores
+        g.drawString(player, 210, 100);
+        Font font2 = new Font("ravie", Font.PLAIN,20);
+        g.setFont(font2);
+        g.drawString(hscore1, 230, 150);
+        g.drawString(hscore2, 230, 190);
+        g.drawString(hscore3, 230, 230);
     }
     
     public void menuItems(Graphics g){
@@ -182,6 +220,8 @@ public class Menu extends Canvas implements Runnable{
         g.setFont(font);
         g.drawString("Play", playBut.x + 5, playBut.y + 23);
         g2d.draw(playBut);
+        g.drawString("My Profile", profileBut.x + 15, profileBut.y + 23);
+        g2d.draw(profileBut);
         g.drawString("Highscores", hSBut.x + 15, hSBut.y + 23);
         g2d.draw(hSBut);
         g.drawString("Description", desBut.x + 5, desBut.y + 23);
