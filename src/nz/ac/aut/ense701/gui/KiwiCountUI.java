@@ -3,6 +3,11 @@ package nz.ac.aut.ense701.gui;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import nz.ac.aut.ense701.gameModel.Game;
@@ -19,7 +24,7 @@ import nz.ac.aut.ense701.gameModel.MoveDirection;
 
 public class KiwiCountUI 
     extends javax.swing.JFrame 
-    implements GameEventListener
+    implements GameEventListener, ActionListener, KeyListener
 {
     Dimension screensize = new Dimension(830, 670);
     /**
@@ -38,6 +43,9 @@ public class KiwiCountUI
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setAsGameListener();
+        addKeyListener(this);
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
         initComponents();
         initIslandGrid();
         update();
@@ -647,4 +655,31 @@ public class KiwiCountUI
     // End of variables declaration//GEN-END:variables
 
     private Game game;
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+    }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        
+        
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            game.playerMove(MoveDirection.EAST);
+        }else if(e.getKeyCode() == KeyEvent.VK_LEFT){
+            game.playerMove(MoveDirection.WEST);
+        }else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+            game.playerMove(MoveDirection.SOUTH);
+        }else if(e.getKeyCode() == KeyEvent.VK_UP){
+            game.playerMove(MoveDirection.NORTH);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+    }
 }

@@ -5,8 +5,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/gui/KiwiCountUI.java</file>
+<<<<<<< HEAD
             <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Menu.java</file>
             <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/main/Main.java</file>
+=======
+            <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/MouseInput.java</file>
+            <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Menu.java</file>
+>>>>>>> master
         </group>
     </open-files>
 </project-private>

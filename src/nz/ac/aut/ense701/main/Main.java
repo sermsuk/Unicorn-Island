@@ -45,7 +45,7 @@ public class Main
         }
         
         try{
-            URL soundURL = sun.applet.Main.class.getResource("/Sounds/menusound.wav");
+            URL soundURL = sun.applet.Main.class.getResource("/Music/menusound.wav");
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundURL);
             clip.open(audioStream);
         }catch(LineUnavailableException e){
@@ -65,9 +65,5 @@ public class Main
                 e.printStackTrace();
             }
         }while(clip.isActive());
-       
     }
-    
-    
-
-}
+} 
