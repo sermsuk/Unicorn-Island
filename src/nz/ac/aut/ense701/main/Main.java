@@ -12,6 +12,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.Menu;
 import nz.ac.aut.ense701.gui.KiwiCountUI;
+import nz.ac.aut.ense701.gui.MainFrame;
 
 /**
  * Kiwi Count Project
@@ -21,8 +22,6 @@ import nz.ac.aut.ense701.gui.KiwiCountUI;
  */
 public class Main 
 {
-    public static Mixer mixer;
-    public static Clip clip;
     /**
      * Main method of Kiwi Count.
      * 
@@ -30,40 +29,15 @@ public class Main
      */
     public static void main(String[] args) 
     {
-        System.out.print("asdfasf");
-        Menu menu = new Menu();
-        menu.Menu();
-        
-        Mixer.Info[] mixInfos = AudioSystem.getMixerInfo();
-        mixer = AudioSystem.getMixer(mixInfos[0]);
-        
-        DataLine.Info dataInfo = new DataLine.Info(Clip.class, null);
-        try{
-            clip = (Clip)mixer.getLine(dataInfo);
-        }catch(LineUnavailableException e){
-            e.printStackTrace();
-        }
-        
-        try{
-            URL soundURL = sun.applet.Main.class.getResource("/Music/menusound.wav");
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundURL);
-            clip.open(audioStream);
-        }catch(LineUnavailableException e){
-            e.printStackTrace();
-        }catch(UnsupportedAudioFileException e){
-           e.printStackTrace();
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-        
-        clip.start();
-        
-        do{
-            try{
-                Thread.sleep(50);
-            }catch(InterruptedException e){
-                e.printStackTrace();
-            }
-        }while(clip.isActive());
+        final MainFrame gui  = new MainFrame();
+                // make the GUI visible
+                java.awt.EventQueue.invokeLater(new Runnable() 
+                {
+                    @Override
+                    public void run() 
+                    {
+                        gui.setVisible(true);
+                    }
+                });
     }
 }

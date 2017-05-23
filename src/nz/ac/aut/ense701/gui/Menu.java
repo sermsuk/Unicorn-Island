@@ -5,16 +5,21 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import nz.ac.aut.ense701.gameModel.Game;
+
 /**
  *
- * @author aoshi
+ * @author Bonaliza
  */
-public class Menu extends javax.swing.JFrame {
+public class Menu extends javax.swing.JPanel {
 
+    MainFrame main;
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu(MainFrame frame) {
+        this.main = frame;
+        this.setBounds(0, 0, 600, 410);
         initComponents();
     }
 
@@ -27,29 +32,109 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        platBuy = new javax.swing.JButton();
+        profBut = new javax.swing.JButton();
+        hscoreBut = new javax.swing.JButton();
+        descBut = new javax.swing.JButton();
+        exitBut = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gameModel/Home_menu.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        platBuy.setText("Play");
+        platBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                platBuyActionPerformed(evt);
+            }
+        });
+        add(platBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 60, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        profBut.setText("My Profile");
+        profBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profButActionPerformed(evt);
+            }
+        });
+        add(profBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 100, -1));
 
-        pack();
+        hscoreBut.setText("HighScore");
+        hscoreBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hscoreButActionPerformed(evt);
+            }
+        });
+        add(hscoreBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 100, -1));
+
+        descBut.setText("Description");
+        descBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descButActionPerformed(evt);
+            }
+        });
+        add(descBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 100, -1));
+
+        exitBut.setText("Quit");
+        exitBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButActionPerformed(evt);
+            }
+        });
+        add(exitBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 60, -1));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Home_menu.jpg"))); // NOI18N
+        add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void hscoreButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hscoreButActionPerformed
+        // TODO add your handling code here:
+        main.remove(this);
+        main.add(main.hscore);
+        main.panelRedraw();
+    }//GEN-LAST:event_hscoreButActionPerformed
+
+    private void exitButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitButActionPerformed
+
+    private void profButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profButActionPerformed
+        // TODO add your handling code here:
+        main.remove(this);
+        main.add(main.profile);
+        main.panelRedraw();
+    }//GEN-LAST:event_profButActionPerformed
+
+    private void descButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descButActionPerformed
+        // TODO add your handling code here:
+        main.remove(this);
+        main.add(main.desc);
+        main.panelRedraw();
+    }//GEN-LAST:event_descButActionPerformed
+
+    private void platBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_platBuyActionPerformed
+        // TODO add your handling code here:
+        // create the game object
+                final Game game = new Game();
+                // create the GUI for the game
+                final KiwiCountUI  gui  = new KiwiCountUI(game);
+                // make the GUI visible
+                java.awt.EventQueue.invokeLater(new Runnable() 
+                {
+                    @Override
+                    public void run() 
+                    {
+                        gui.setVisible(true);
+                    }
+                });
+    }//GEN-LAST:event_platBuyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel background;
+    private javax.swing.JButton descBut;
+    private javax.swing.JButton exitBut;
+    private javax.swing.JButton hscoreBut;
+    private javax.swing.JButton platBuy;
+    private javax.swing.JButton profBut;
     // End of variables declaration//GEN-END:variables
 }

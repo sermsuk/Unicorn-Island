@@ -171,7 +171,7 @@ public class Menu extends Canvas implements Runnable{
             highscore(g);
         }else if(state == GameState.DESCRIPTION){
             g.drawImage(desTab, 0, 0, this);
-            Description(g);
+            createDesPage(g);
         } else if(state == GameState.PLAYERPROFILE) {
             g.drawImage(otherMenuBack, 0, 0, this);
             playerProfile(g);
@@ -247,7 +247,7 @@ public class Menu extends Canvas implements Runnable{
         g2d.draw(backBut);
     }
     
-    public void Description(Graphics g ){
+    public void createDesPage(Graphics g ){
         Graphics2D g2d = (Graphics2D) g;
         
         //draws title
