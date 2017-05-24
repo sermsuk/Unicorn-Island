@@ -10,7 +10,6 @@ import java.awt.Font;
 
 /**
  *
- * @author Bonaliza
  */
 public class Description extends javax.swing.JPanel {
     
@@ -22,7 +21,7 @@ public class Description extends javax.swing.JPanel {
         this.setBounds(0, 0, 600, 410);
         initComponents();
         
-        desText.setFont(new Font("Arial", Font.BOLD, 12));
+        desText.setFont(new Font("Arial", Font.BOLD, 15));
         desText.setText("<html>Unicorn Island consists of many mystical creatures such as;"
                 + "<br>Fairies, Pegasus, Mermaids, Griffins, Pixies, and more."
                 + "<br>For many years, the Unicorns have been huntered by many"
@@ -43,7 +42,6 @@ public class Description extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         desText = new javax.swing.JLabel();
         descHead = new javax.swing.JLabel();
         backBut = new javax.swing.JButton();
@@ -52,13 +50,11 @@ public class Description extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         desText.setText("Text");
-        jPanel1.add(desText);
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 380, 170));
+        add(desText, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
 
         descHead.setFont(new java.awt.Font("Ravie", 1, 36)); // NOI18N
         descHead.setText("Description");
-        add(descHead, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 310, 40));
+        add(descHead, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 310, 40));
 
         backBut.setText("Back");
         backBut.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +64,7 @@ public class Description extends javax.swing.JPanel {
         });
         add(backBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Other_menu.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/des_menu.jpg"))); // NOI18N
         add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -85,7 +81,6 @@ public class Description extends javax.swing.JPanel {
     private javax.swing.JLabel background;
     private javax.swing.JLabel desText;
     private javax.swing.JLabel descHead;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
 }

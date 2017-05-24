@@ -9,8 +9,6 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.Mixer;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import nz.ac.aut.ense701.gameModel.Game;
-import nz.ac.aut.ense701.gameModel.Menu;
 import nz.ac.aut.ense701.gui.KiwiCountUI;
 import nz.ac.aut.ense701.gui.MainFrame;
 
