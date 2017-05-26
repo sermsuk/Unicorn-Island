@@ -1,5 +1,6 @@
 package nz.ac.aut.ense701.main;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javax.sound.sampled.AudioInputStream;
@@ -28,14 +29,34 @@ public class Main
     public static void main(String[] args) 
     {
         final MainFrame gui  = new MainFrame();
-                // make the GUI visible
-                java.awt.EventQueue.invokeLater(new Runnable() 
-                {
-                    @Override
-                    public void run() 
-                    {
-                        gui.setVisible(true);
-                    }
-                });
+        boolean musicLoop = true;
+
+        // make the GUI visible
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
+            @Override
+            public void run() 
+            {
+                gui.setVisible(true);
+            }
+        });
+
+        //Plays and loops the background music
+        File bgMusic = new File("bgMusic.wav");
+        while(musicLoop == true){
+            musicPlayer(bgMusic);
+        }
+    }
+    
+    static void musicPlayer(File music){
+        try{
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(music));
+            clip.start();
+            
+            Thread.sleep(clip.getMicrosecondLength()/1000);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
