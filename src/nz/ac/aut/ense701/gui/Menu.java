@@ -5,6 +5,7 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import javax.swing.JOptionPane;
 import nz.ac.aut.ense701.gameModel.Game;
 
 /**
@@ -14,6 +15,8 @@ import nz.ac.aut.ense701.gameModel.Game;
 public class Menu extends javax.swing.JPanel {
 
     MainFrame main;
+    boolean startGame = false;
+    
     /**
      * Creates new form Menu
      */
@@ -32,7 +35,7 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        platBuy = new javax.swing.JButton();
+        playBut = new javax.swing.JButton();
         profBut = new javax.swing.JButton();
         hscoreBut = new javax.swing.JButton();
         descBut = new javax.swing.JButton();
@@ -41,13 +44,13 @@ public class Menu extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        platBuy.setText("Play");
-        platBuy.addActionListener(new java.awt.event.ActionListener() {
+        playBut.setText("Play");
+        playBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                platBuyActionPerformed(evt);
+                playButActionPerformed(evt);
             }
         });
-        add(platBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 60, -1));
+        add(playBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 60, -1));
 
         profBut.setText("My Profile");
         profBut.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +89,6 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void hscoreButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hscoreButActionPerformed
-        // TODO add your handling code here:
         main.remove(this);
         main.add(main.hscore);
         main.panelRedraw();
@@ -98,35 +100,37 @@ public class Menu extends javax.swing.JPanel {
     }//GEN-LAST:event_exitButActionPerformed
 
     private void profButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profButActionPerformed
-        // TODO add your handling code here:
         main.remove(this);
         main.add(main.profile);
         main.panelRedraw();
     }//GEN-LAST:event_profButActionPerformed
 
     private void descButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descButActionPerformed
-        // TODO add your handling code here:
         main.remove(this);
         main.add(main.desc);
         main.panelRedraw();
     }//GEN-LAST:event_descButActionPerformed
 
-    private void platBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_platBuyActionPerformed
-        // TODO add your handling code here:
-        // create the game object
-                final Game game = new Game();
-                // create the GUI for the game
-                final KiwiCountUI  gui  = new KiwiCountUI(game);
-                // make the GUI visible
-                java.awt.EventQueue.invokeLater(new Runnable() 
+    private void playButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButActionPerformed
+        if(startGame == false){
+            // create the game object
+            final Game game = new Game();
+            // create the GUI for the game
+            final KiwiCountUI  gui  = new KiwiCountUI(game);
+            // make the GUI visible
+            java.awt.EventQueue.invokeLater(new Runnable() 
+            {
+                @Override
+                public void run() 
                 {
-                    @Override
-                    public void run() 
-                    {
-                        gui.setVisible(true);
-                    }
-                });
-    }//GEN-LAST:event_platBuyActionPerformed
+                    gui.setVisible(true);
+                }
+            });
+            startGame = true;
+        }else{
+            JOptionPane.showMessageDialog(null, "Game has already started", "Alert!", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_playButActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -134,7 +138,7 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JButton descBut;
     private javax.swing.JButton exitBut;
     private javax.swing.JButton hscoreBut;
-    private javax.swing.JButton platBuy;
+    private javax.swing.JButton playBut;
     private javax.swing.JButton profBut;
     // End of variables declaration//GEN-END:variables
 }

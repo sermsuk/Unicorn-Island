@@ -43,9 +43,12 @@ public class KiwiCountUI
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setAsGameListener();
+        
+        //sets keyboard listener
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
+        
         initComponents();
         initIslandGrid();
         update();
@@ -653,8 +656,6 @@ public class KiwiCountUI
 
     @Override
     public void keyPressed(KeyEvent e) {
-        
-        
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
             game.playerMove(MoveDirection.EAST);
         }else if(e.getKeyCode() == KeyEvent.VK_LEFT){
