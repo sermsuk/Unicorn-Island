@@ -42,7 +42,7 @@ public class Main
         });
 
         //Plays and loops the background music
-        File bgMusic = new File("bgMusic.wav");
+        File bgMusic = new File("sounds/bg_music2.wav");
         while(musicLoop == true){
             musicPlayer(bgMusic);
         }

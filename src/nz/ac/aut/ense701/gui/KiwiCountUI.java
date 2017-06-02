@@ -8,12 +8,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
+import nz.ac.aut.ense701.gameModel.SoundPlayer;
 
 /*
  * User interface form for Kiwi Island.
@@ -36,8 +40,7 @@ public class KiwiCountUI
         assert game != null : "Make sure game object is created before UI";
         this.game = game;
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
+       
         this.setPreferredSize(screensize);
         this.pack();
         this.setLocationRelativeTo(null);
@@ -66,6 +69,10 @@ public class KiwiCountUI
         // check for "game over" or "game won"
         if ( game.getState() == GameState.LOST )
         {
+            //Plays sound when player dies
+            File die = new File("sounds/game_die.wav");
+            SoundPlayer diesound = new SoundPlayer(die);
+            
             JOptionPane.showMessageDialog(
                     this, 
                     game.getLoseMessage(), "Game over!",
@@ -329,7 +336,7 @@ public class KiwiCountUI
         pnlPlayer.add(pnlPlayerData, java.awt.BorderLayout.WEST);
 
         pnlContent.add(pnlPlayer);
-        pnlPlayer.setBounds(10, 460, 279, 173);
+        pnlPlayer.setBounds(10, 460, 263, 173);
 
         pnlMovement.setBackground(new java.awt.Color(107, 176, 245));
         pnlMovement.setBorder(javax.swing.BorderFactory.createTitledBorder("Movement"));
@@ -537,6 +544,7 @@ public class KiwiCountUI
         pnlInventory.setBounds(450, 460, 180, 170);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
+        background.setPreferredSize(new java.awt.Dimension(1565, 1200));
         pnlContent.add(background);
         background.setBounds(0, 0, 830, 640);
 
@@ -595,6 +603,10 @@ public class KiwiCountUI
     }//GEN-LAST:event_listInventoryValueChanged
 
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
+        //Plays sound effect when a unicorn has been added to the count
+        File unicorn = new File("sounds/unicorn2.wav");
+        SoundPlayer unicornSound = new SoundPlayer(unicorn);
+        
         game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
     
