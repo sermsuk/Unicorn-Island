@@ -24,6 +24,8 @@ public class Menu extends javax.swing.JPanel {
         this.main = frame;
         this.setBounds(0, 0, 600, 410);
         initComponents();
+        
+        //ImageIcone playImage = new ImageIcon("")
     }
 
     /**
@@ -45,46 +47,51 @@ public class Menu extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         playBut.setText("Play");
+        playBut.setPreferredSize(new java.awt.Dimension(55, 25));
         playBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playButActionPerformed(evt);
             }
         });
-        add(playBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 60, -1));
+        add(playBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 60, -1));
 
         profBut.setText("My Profile");
+        profBut.setPreferredSize(new java.awt.Dimension(80, 25));
         profBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profButActionPerformed(evt);
             }
         });
-        add(profBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 100, -1));
+        add(profBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 100, -1));
 
         hscoreBut.setText("HighScore");
+        hscoreBut.setPreferredSize(new java.awt.Dimension(80, 25));
         hscoreBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hscoreButActionPerformed(evt);
             }
         });
-        add(hscoreBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 100, -1));
+        add(hscoreBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 100, -1));
 
         descBut.setText("Description");
+        descBut.setPreferredSize(new java.awt.Dimension(85, 25));
         descBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 descButActionPerformed(evt);
             }
         });
-        add(descBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 100, -1));
+        add(descBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 100, -1));
 
         exitBut.setText("Quit");
+        exitBut.setPreferredSize(new java.awt.Dimension(50, 25));
         exitBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitButActionPerformed(evt);
             }
         });
-        add(exitBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 60, -1));
+        add(exitBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 60, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Home_menu.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background2.png"))); // NOI18N
         add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

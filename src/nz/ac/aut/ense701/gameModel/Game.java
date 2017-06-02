@@ -319,7 +319,7 @@ public class Game
                 Tool tool = (Tool)itemToUse;
                 //Traps can only be used if there is a predator to catch
                 if(tool.isTrap())
-                {
+                {                    
                     result = island.hasPredator(player.getPosition());
                 }
                 //Screwdriver can only be used if player has a broken trap
@@ -393,7 +393,7 @@ public class Game
         {
             // player has picked up an item: remove from grid square
             island.removeOccupant(player.getPosition(), (Item)item);
-            
+           
             
             // everybody has to know about the change
             notifyGameEventListeners();
@@ -443,6 +443,10 @@ public class Game
         if ( item instanceof Food && player.hasItem((Food) item) )
         //Player east food to increase stamina
         {
+            //Plays eating sound effect
+            File eating = new File("sounds/eat.wav");
+            SoundPlayer trapPredator = new SoundPlayer(eating);
+            
             Food food = (Food) item;
             // player gets energy boost from food
             player.increaseStamina(food.getEnergy());
@@ -453,6 +457,10 @@ public class Game
         }
         else if (item instanceof Tool)
         {
+            //Plays trapping sound
+            File trapping = new File("sounds/mouse_trap.wav");
+            SoundPlayer trapPredator = new SoundPlayer(trapping);
+            
             Tool tool = (Tool) item;
             if (tool.isTrap()&& !tool.isBroken())
             {

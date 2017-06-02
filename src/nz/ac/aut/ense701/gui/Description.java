@@ -64,7 +64,7 @@ public class Description extends javax.swing.JPanel {
         });
         add(backBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/des_menu.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background2_1.png"))); // NOI18N
         add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
     }// </editor-fold>//GEN-END:initComponents
 
