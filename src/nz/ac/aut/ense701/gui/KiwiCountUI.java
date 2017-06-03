@@ -253,6 +253,7 @@ public class KiwiCountUI
 
         progPlayerStamina.setBackground(new java.awt.Color(255, 0, 0));
         progPlayerStamina.setForeground(new java.awt.Color(51, 255, 0));
+        progPlayerStamina.setMaximum(100);
         progPlayerStamina.setStringPainted(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -336,7 +337,7 @@ public class KiwiCountUI
         pnlPlayer.add(pnlPlayerData, java.awt.BorderLayout.WEST);
 
         pnlContent.add(pnlPlayer);
-        pnlPlayer.setBounds(10, 460, 263, 173);
+        pnlPlayer.setBounds(10, 460, 270, 173);
 
         pnlMovement.setBackground(new java.awt.Color(107, 176, 245));
         pnlMovement.setBorder(javax.swing.BorderFactory.createTitledBorder("Movement"));

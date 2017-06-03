@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/gui/KiwiCountUI.java</file>
-            <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/gui/Menu.java</file>
-            <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/gui/GridSquarePanel.java</file>
-            <file>file:/C:/Users/aoshi/Documents/2017%20SE/KiwiIsland/Unicorn-Island/src/nz/ac/aut/ense701/main/Main.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Game.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gui/KiwiCountUI.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Item.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Fauna.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gui/GridSquarePanel.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/GameEventListener.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/GridSquare.java</file>
+            <file>file:/C:/Users/Default.Default-PC/Documents/GitHub/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Player.java</file>
         </group>
     </open-files>
 </project-private>
