@@ -56,6 +56,7 @@ public class Game
         loseMessage = "";
         playerMessage = "";
         notifyGameEventListeners();
+        //intPlayerScore();
     }
 
     /***********************************************************************************************************************
@@ -242,6 +243,14 @@ public class Game
         return player.getName();
     }
 
+    public int getPlayerScore() {
+        return score.getCurrentScore();
+    }
+    
+    public int getHighScore() {
+        return score.getHighScore();
+    }
+    
     /**
      * Is player in this position?
      * @param row
@@ -845,12 +854,28 @@ public class Game
             }
             if ( occupant != null ) island.addOccupant(occPos, occupant);
         }
-    }    
+    }   
+    
+    public int updatePlayerScore() {
+        
+        int pScore = 0;
+        
+        pScore = kiwiCount * 10;
+        pScore += (predatorsTrapped * 5);
+        
+        score.setCurrentScore(pScore);
+        if(score.getCurrentScore() > score.getHighScore()) {
+            score.setHighScore(score.getCurrentScore());
+        }
+        
+        return pScore;
+    }
 
 
     private Island island;
     private Player player;
     private GameState state;
+    private ScoringSystem score = new ScoringSystem();
     private int kiwiCount;
     private int totalPredators;
     private int totalKiwis;
