@@ -186,11 +186,11 @@ public class KiwiCountUI
         javax.swing.JLabel lblBackpackSize = new javax.swing.JLabel();
         progBackpackSize = new javax.swing.JProgressBar();
         lblPredators = new javax.swing.JLabel();
-        lblKiwisCounted = new javax.swing.JLabel();
         txtPredatorsLeft = new javax.swing.JLabel();
         txtKiwisCounted = new javax.swing.JLabel();
         lblScore = new javax.swing.JLabel();
         txtScore = new javax.swing.JLabel();
+        lblKiwisCounted = new javax.swing.JLabel();
         javax.swing.JPanel pnlMovement = new javax.swing.JPanel();
         btnMoveNorth = new javax.swing.JButton();
         btnMoveSouth = new javax.swing.JButton();
@@ -324,13 +324,6 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(lblPredators, gridBagConstraints);
 
-        lblKiwisCounted.setText("Kiwis Counted :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        pnlPlayerData.add(lblKiwisCounted, gridBagConstraints);
-
         txtPredatorsLeft.setText("P");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -358,6 +351,13 @@ public class KiwiCountUI
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(txtScore, gridBagConstraints);
+
+        lblKiwisCounted.setText("Kiwis Counted :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        pnlPlayerData.add(lblKiwisCounted, gridBagConstraints);
 
         pnlPlayer.add(pnlPlayerData, java.awt.BorderLayout.CENTER);
 

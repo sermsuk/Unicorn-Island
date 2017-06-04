@@ -25,7 +25,7 @@ public class Description extends javax.swing.JPanel {
         desText.setText("<html>Unicorn Island consists of many mystical creatures such as;"
                 + "<br>Fairies, Pegasus, Mermaids, Griffins, Pixies, and more."
                 + "<br>For many years, the Unicorns have been huntered by many"
-                + "<br>preditors and forcing them into hiding. Your quest as "
+                + "<br>predators and forcing them into hiding. Your quest as "
                 + "<br>an adventurer is to find and trap these predators to"
                 + "<br>bring back peace to Unicorn Island."
                 + "<br>Good Luck Adventurer!</html>");
