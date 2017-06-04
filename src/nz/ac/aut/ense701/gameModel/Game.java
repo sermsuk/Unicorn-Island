@@ -871,7 +871,6 @@ public class Game
         return pScore;
     }
 
-
     private Island island;
     private Player player;
     private GameState state;

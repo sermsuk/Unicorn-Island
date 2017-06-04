@@ -5,21 +5,28 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import Records.GamePlayerRecord;
+import nz.ac.aut.ense701.gameModel.Game;
+
 /**
  *
  * @author Bonaliza
  */
 public class MainFrame extends javax.swing.JFrame {
 
+    Game game;
     Menu menu;
     Profile profile;
     HighScore hscore;
     Description desc;
+    GamePlayerRecord playerRecord;
     
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
+        game = new Game();
+        playerRecord = new GamePlayerRecord();
         menu = new Menu(this);
         profile = new Profile(this);
         hscore = new HighScore(this);

@@ -17,9 +17,9 @@ import java.util.logging.Logger;
  */
 public abstract class DBrecords {
     protected Connection conn;
-    protected final String url = "jdbc:derby:gamedev;create=true";
-    protected final String user = "admin_joben";
-    protected final String pass = "benjopogi";
+    protected final String url = "jdbc:derby:softeng;create=true";
+    protected final String user = "admin_admin";
+    protected final String pass = "unicorn";
     
     protected void openConnection() {
         try {

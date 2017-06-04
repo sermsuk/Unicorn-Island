@@ -31,9 +31,6 @@ public class Main
     {
         final MainFrame gui  = new MainFrame();
         boolean musicLoop = true;
-        ScoringSystem score = new ScoringSystem();
-        
-        System.out.print(score.getHighScore());
         // make the GUI visible
         java.awt.EventQueue.invokeLater(new Runnable() 
         {

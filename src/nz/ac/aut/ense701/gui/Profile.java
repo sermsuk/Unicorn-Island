@@ -5,20 +5,26 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import java.util.ArrayList;
+import nz.ac.aut.ense701.gameModel.Game;
+import nz.ac.aut.ense701.gameModel.ScoringSystem;
+
 /**
  *
  * @author Bonaliza
  */
 public class Profile extends javax.swing.JPanel {
-    
+    Game game;
     MainFrame main;
     /**
      * Creates new form Profile
      */
     public Profile(MainFrame frame) {
+        game = new Game();
         this.main = frame;
         this.setBounds(0, 0, 600, 410);
         initComponents();
+        fill();
     }
 
     /**
@@ -29,9 +35,13 @@ public class Profile extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         profHead = new javax.swing.JLabel();
         backBut = new javax.swing.JButton();
+        playerName = new javax.swing.JLabel();
+        playerScore = new javax.swing.JLabel();
+        playerScore1 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,6 +59,20 @@ public class Profile extends javax.swing.JPanel {
         });
         add(backBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
 
+        playerName.setFont(new java.awt.Font("Ravie", 1, 18)); // NOI18N
+        playerName.setText("player");
+        add(playerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 300, 30));
+
+        playerScore.setFont(new java.awt.Font("Ravie", 1, 18)); // NOI18N
+        playerScore.setText("0");
+        playerScore.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(playerScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 120, 30));
+
+        playerScore1.setFont(new java.awt.Font("Ravie", 1, 18)); // NOI18N
+        playerScore1.setText("0");
+        playerScore1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(playerScore1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 120, 30));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background2_1.png"))); // NOI18N
         add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
     }// </editor-fold>//GEN-END:initComponents
@@ -64,6 +88,18 @@ public class Profile extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBut;
     private javax.swing.JLabel background;
+    private javax.swing.JLabel playerName;
+    private javax.swing.JLabel playerScore;
+    private javax.swing.JLabel playerScore1;
     private javax.swing.JLabel profHead;
     // End of variables declaration//GEN-END:variables
+
+    private void fill() {
+        ArrayList<ScoringSystem> list = main.playerRecord.getPlayRecords();
+        playerName.setText(game.getPlayerName());
+        playerScore.setText(String.valueOf(list.get(0).getHighScore()));
+        playerScore1.setText("0");
+        //System.out.println(game.getPlayerScore());
+        System.out.println(game.getHighScore());
+    }
 }
