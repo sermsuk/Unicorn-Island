@@ -44,6 +44,7 @@ public class GridSquarePanel extends javax.swing.JPanel
         
         Color      color;
         ImageIcon image;
+        
         switch ( terrain )
         {
             case SAND     : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/sand.jpg")); break;
@@ -51,7 +52,7 @@ public class GridSquarePanel extends javax.swing.JPanel
             case WETLAND  : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/forest.jpg")); break;
             case SCRUB    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub.jpg")); break;
             case WATER    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/water.jpg")); break;
-            case BRICK    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/Brick.jpg")); break;
+            case BRICK    : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/brick.jpg")); break;
             default       : image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/gray.jpg")); break; 
         }
         
@@ -64,6 +65,97 @@ public class GridSquarePanel extends javax.swing.JPanel
             
             setVisible(true);
             
+            //Kiwifruit
+            if( row == 6 && column == 2) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/brick2.jpg"));
+            }
+            
+            if( row == 0 && column == 7) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrubk.jpg"));
+            }
+            
+            if( row == 7 && column == 0 || row == 7 && column == 7 || row == 6 && column == 6 || row == 8 && column == 3 || row == 9 && column == 3 || row == 9 && column == 4 || row == 9 && column == 6) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grassk.jpg"));
+            }
+            
+            if( row == 2 && column == 8) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrubk.jpg"));
+            }
+            //Trap
+            if("T".equals(game.getOccupantStringRepresentation(row, column))){
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/trap.jpg"));
+                lblText.setIcon(image);
+            }
+            //Food
+            if(game.getOccupantStringRepresentation(row, column) == "apple" ) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scruba.jpg"));
+            }
+            //if( row == 6 && column == 7) {
+            //    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scruba.jpg"));
+            //}
+            
+            if( row == 5 && column == 4) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grassm.jpg"));
+            }
+            
+            if( row == 2 && column == 4) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrubs.jpg"));
+            }
+            
+            if( row == 8 && column == 2) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grasso.jpg"));
+            }
+            //Predator
+            if( row == 2 && column == 6) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrubr.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub.jpg"));
+                }
+            }
+            
+            if( row == 9 && column == 7 ||row == 5 && column == 2 ) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grassp.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass.jpg"));
+                }
+            }
+            
+            if( row == 3 && column == 4 || row == 6 && column == 4 ) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grassr.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass.jpg"));
+                }
+            }
+            
+            if( row == 4 && column == 1) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/waters.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/water.jpg"));
+                }
+            }
+            //Mystical Creature
+            if( row == 7 && column == 3) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/brickf.jpg"));
+            }
+            
+            if( row == 4 && column == 0) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/sandph.jpg"));
+            }
+            
+            if( row == 0 && column == 3) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/sandm.jpg"));
+            }
+            
+            if( row == 4 && column == 6 || row == 6 && column == 8) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrubp.jpg"));
+            }
+            
+            if( row == 8 && column == 8) {
+                image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grassd.jpg"));
+            }
+            
+            
+            //Hazard
             if( squareExplored && row == 2 && column == 2) {
                 image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass2.jpg"));
                 lblText.setHorizontalAlignment((int) CENTER_ALIGNMENT);
@@ -98,6 +190,7 @@ public class GridSquarePanel extends javax.swing.JPanel
 
             }
             lblText.setIcon(image);
+            
             // set border colour according to 
             // whether the player is in the grid square or not
             setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);

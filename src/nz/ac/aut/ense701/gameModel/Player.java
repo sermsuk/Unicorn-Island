@@ -164,6 +164,10 @@ public class Player
         }
         return totalWeight;
     }    
+    
+    public double addMaxStamina() {
+        return this.maxStamina + 20;
+    }
 
         
     /**
@@ -284,7 +288,8 @@ public class Player
        }
        if ( stamina > maxStamina )
        {
-           stamina = maxStamina;
+           
+           stamina += 20;
        }
     }
     
