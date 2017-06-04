@@ -13,8 +13,10 @@ package nz.ac.aut.ense701.gameModel;
 public class ScoringSystem {    
     
     //initialize variables
-    private int highScore;    
+   // private int highScore;    
     private int currentScore;
+    private int highScore;
+    private String player;
 
     
     //default constructor
@@ -40,4 +42,12 @@ public class ScoringSystem {
         this.currentScore = currentScore;
     }
     
+    public void setPlayer(String name) {
+       this.player = name;
+        
+    }
+    
+    public String getPlayer() {
+        return player;
+    }
 }

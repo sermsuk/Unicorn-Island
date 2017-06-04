@@ -1,5 +1,6 @@
 package nz.ac.aut.ense701.gui;
 
+import Records.GamePlayerRecord;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -39,6 +40,7 @@ public class KiwiCountUI
     public KiwiCountUI(Game game) 
     {
         assert game != null : "Make sure game object is created before UI";
+        playerRecord = new GamePlayerRecord();
         this.game = game;
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        
@@ -104,11 +106,19 @@ public class KiwiCountUI
     }
      
     private void updateScore() {
+        score.setCurrentScore(game.updatePlayerScore());
         txtScore.setText(""+ game.updatePlayerScore());
     }
      
     private void gameReset() {
-            txtScore.setText("0");
+        saveGame();
+        txtScore.setText(game.getPlayerName());
+        System.out.println(game.getHighScore());
+    }
+    
+    public void saveGame() {
+        score.setPlayer(game.getPlayerName());
+        playerRecord.InsertUserDetails(score);
     }
      
     /**
@@ -687,6 +697,8 @@ public class KiwiCountUI
     // End of variables declaration//GEN-END:variables
 
     private Game game;
+    private GamePlayerRecord playerRecord;
+    private ScoringSystem score = new ScoringSystem();
 
     @Override
     public void actionPerformed(ActionEvent ae) {

@@ -44,7 +44,7 @@ public class Player
        this.maxBackpackSize = maxBackpackSize;
        this.alive = true;
        this.backpack = new HashSet<Item>();
-    }   
+    }       
     
     /*****************************************************************************************************
      * Accessor methods
