@@ -66,7 +66,7 @@ public class GridSquarePanel extends javax.swing.JPanel
             setVisible(true);
             // Set the colour. 
             
-            //Kiwifruit
+            //Unicorn
             if( row == 6 && column == 2) {
                 image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/brick2.jpg"));
             }
@@ -88,23 +88,33 @@ public class GridSquarePanel extends javax.swing.JPanel
                 lblText.setIcon(image);
             }
             //Food
-            if(game.getOccupantStringRepresentation(row, column) == "apple" ) {
+
+            if( row == 6 && column == 7) {
                 image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scruba.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub.jpg"));
+                }
             }
-            //if( row == 6 && column == 7) {
-            //    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scruba.jpg"));
-            //}
             
             if( row == 5 && column == 4) {
                 image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grassm.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass.jpg"));
+                }
             }
             
             if( row == 2 && column == 4) {
                 image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrubs.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/scrub.jpg"));
+                }
             }
             
             if( row == 8 && column == 2) {
                 image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grasso.jpg"));
+                if(game.getOccupantStringRepresentation(row, column) == "") {
+                    image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass.jpg"));
+                }
             }
             //Predator
             if( row == 2 && column == 6) {

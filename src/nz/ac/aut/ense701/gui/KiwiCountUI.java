@@ -313,7 +313,7 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(lblPredators, gridBagConstraints);
 
-        lblKiwisCounted.setText("Kiwis Counted :");
+        lblKiwisCounted.setText("Unicorn Counted :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
