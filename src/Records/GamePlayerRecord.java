@@ -25,8 +25,6 @@ public class GamePlayerRecord extends DBrecords implements PlayerRecord{
     ResultSet resSet = null;
     Statement stmt = null;
     ScoringSystem score = new ScoringSystem();
-    ArrayList<String> player ;
-    ArrayList<Integer> pscore;
     Game game = new Game();
     
     public GamePlayerRecord() {
