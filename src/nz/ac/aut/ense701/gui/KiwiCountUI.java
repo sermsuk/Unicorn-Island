@@ -112,7 +112,7 @@ public class KiwiCountUI
      
     private void gameReset() {
         saveGame();
-        txtScore.setText(game.getPlayerName());
+        txtScore.setText("0");
         System.out.println(game.getHighScore());
     }
     
