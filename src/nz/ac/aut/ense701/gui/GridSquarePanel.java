@@ -64,7 +64,6 @@ public class GridSquarePanel extends javax.swing.JPanel
             lblText.setVerticalTextPosition((int) CENTER_ALIGNMENT);
             
             setVisible(true);
-            // Set the colour. 
             
             //Kiwifruit
             if( row == 6 && column == 2) {
@@ -163,6 +162,7 @@ public class GridSquarePanel extends javax.swing.JPanel
                 lblText.setVerticalAlignment((int) CENTER_ALIGNMENT);
                 setVisible(true);
             }
+
             
             if( squareExplored && row == 3 && column == 5 || squareExplored && row == 7 && column == 4 || squareExplored && row == 6 && column == 5 || squareExplored && row == 7 && column == 6) {
                 image = new ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/grass2.jpg"));

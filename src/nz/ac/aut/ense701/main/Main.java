@@ -10,6 +10,7 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.Mixer;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import nz.ac.aut.ense701.gameModel.ScoringSystem;
 import nz.ac.aut.ense701.gui.KiwiCountUI;
 import nz.ac.aut.ense701.gui.MainFrame;
 
@@ -30,7 +31,9 @@ public class Main
     {
         final MainFrame gui  = new MainFrame();
         boolean musicLoop = true;
-
+        ScoringSystem score = new ScoringSystem();
+        
+        System.out.print(score.getHighScore());
         // make the GUI visible
         java.awt.EventQueue.invokeLater(new Runnable() 
         {

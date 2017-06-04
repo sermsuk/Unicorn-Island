@@ -17,6 +17,7 @@ import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
+import nz.ac.aut.ense701.gameModel.ScoringSystem;
 import nz.ac.aut.ense701.gameModel.SoundPlayer;
 
 /*
@@ -77,6 +78,7 @@ public class KiwiCountUI
                     this, 
                     game.getLoseMessage(), "Game over!",
                     JOptionPane.INFORMATION_MESSAGE);
+            gameReset();
             game.createNewGame();
         }
         else if ( game.getState() == GameState.WON )
@@ -99,6 +101,14 @@ public class KiwiCountUI
      private void setAsGameListener()
     {
        game.addGameEventListener(this); 
+    }
+     
+    private void updateScore() {
+        txtScore.setText(""+ game.updatePlayerScore());
+    }
+     
+    private void gameReset() {
+            txtScore.setText("0");
     }
      
     /**
@@ -176,9 +186,11 @@ public class KiwiCountUI
         javax.swing.JLabel lblBackpackSize = new javax.swing.JLabel();
         progBackpackSize = new javax.swing.JProgressBar();
         lblPredators = new javax.swing.JLabel();
-        lblKiwisCounted = new javax.swing.JLabel();
-        txtKiwisCounted = new javax.swing.JLabel();
         txtPredatorsLeft = new javax.swing.JLabel();
+        txtKiwisCounted = new javax.swing.JLabel();
+        lblScore = new javax.swing.JLabel();
+        txtScore = new javax.swing.JLabel();
+        lblKiwisCounted = new javax.swing.JLabel();
         javax.swing.JPanel pnlMovement = new javax.swing.JPanel();
         btnMoveNorth = new javax.swing.JButton();
         btnMoveSouth = new javax.swing.JButton();
@@ -210,11 +222,11 @@ public class KiwiCountUI
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         pnlContent.add(pnlIsland);
-        pnlIsland.setBounds(10, 10, 810, 450);
+        pnlIsland.setBounds(10, 10, 810, 440);
 
         pnlControls.setLayout(new java.awt.GridBagLayout());
         pnlContent.add(pnlControls);
@@ -253,7 +265,6 @@ public class KiwiCountUI
 
         progPlayerStamina.setBackground(new java.awt.Color(255, 0, 0));
         progPlayerStamina.setForeground(new java.awt.Color(51, 255, 0));
-        progPlayerStamina.setMaximum(100);
         progPlayerStamina.setStringPainted(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -313,12 +324,12 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(lblPredators, gridBagConstraints);
 
-        lblKiwisCounted.setText("Kiwis Counted :");
+        txtPredatorsLeft.setText("P");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        pnlPlayerData.add(lblKiwisCounted, gridBagConstraints);
+        pnlPlayerData.add(txtPredatorsLeft, gridBagConstraints);
 
         txtKiwisCounted.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -327,17 +338,31 @@ public class KiwiCountUI
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         pnlPlayerData.add(txtKiwisCounted, gridBagConstraints);
 
-        txtPredatorsLeft.setText("P");
+        lblScore.setText("Score:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        pnlPlayerData.add(lblScore, gridBagConstraints);
+
+        txtScore.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        pnlPlayerData.add(txtPredatorsLeft, gridBagConstraints);
+        pnlPlayerData.add(txtScore, gridBagConstraints);
 
-        pnlPlayer.add(pnlPlayerData, java.awt.BorderLayout.WEST);
+        lblKiwisCounted.setText("Kiwis Counted :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        pnlPlayerData.add(lblKiwisCounted, gridBagConstraints);
+
+        pnlPlayer.add(pnlPlayerData, java.awt.BorderLayout.CENTER);
 
         pnlContent.add(pnlPlayer);
-        pnlPlayer.setBounds(10, 460, 270, 173);
+        pnlPlayer.setBounds(10, 450, 280, 180);
 
         pnlMovement.setBackground(new java.awt.Color(107, 176, 245));
         pnlMovement.setBorder(javax.swing.BorderFactory.createTitledBorder("Movement"));
@@ -408,7 +433,7 @@ public class KiwiCountUI
         pnlMovement.add(btnMoveWest, gridBagConstraints);
 
         pnlContent.add(pnlMovement);
-        pnlMovement.setBounds(290, 460, 160, 170);
+        pnlMovement.setBounds(290, 450, 160, 180);
 
         pnlObjects.setBackground(new java.awt.Color(107, 176, 245));
         pnlObjects.setBorder(javax.swing.BorderFactory.createTitledBorder("Objects"));
@@ -479,7 +504,7 @@ public class KiwiCountUI
         pnlObjects.add(btnCount, gridBagConstraints);
 
         pnlContent.add(pnlObjects);
-        pnlObjects.setBounds(630, 460, 190, 170);
+        pnlObjects.setBounds(630, 450, 190, 180);
 
         pnlInventory.setBackground(new java.awt.Color(107, 176, 245));
         pnlInventory.setBorder(javax.swing.BorderFactory.createTitledBorder("Inventory"));
@@ -542,7 +567,7 @@ public class KiwiCountUI
         pnlInventory.add(btnUse, gridBagConstraints);
 
         pnlContent.add(pnlInventory);
-        pnlInventory.setBounds(450, 460, 180, 170);
+        pnlInventory.setBounds(450, 450, 180, 180);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/image/island.jpg"))); // NOI18N
         background.setPreferredSize(new java.awt.Dimension(1565, 1200));
@@ -591,6 +616,7 @@ public class KiwiCountUI
 
     private void btnUseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUseActionPerformed
         game.useItem( listInventory.getSelectedValue());
+        updateScore();
     }//GEN-LAST:event_btnUseActionPerformed
 
     private void listInventoryValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listInventoryValueChanged
@@ -609,6 +635,7 @@ public class KiwiCountUI
         SoundPlayer unicornSound = new SoundPlayer(unicorn);
         
         game.countKiwi();
+        updateScore();
     }//GEN-LAST:event_btnCountActionPerformed
     
     /**
@@ -646,6 +673,7 @@ public class KiwiCountUI
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JLabel lblKiwisCounted;
     private javax.swing.JLabel lblPredators;
+    private javax.swing.JLabel lblScore;
     private javax.swing.JList listInventory;
     private javax.swing.JList listObjects;
     private javax.swing.JPanel pnlIsland;
@@ -655,6 +683,7 @@ public class KiwiCountUI
     private javax.swing.JLabel txtKiwisCounted;
     private javax.swing.JLabel txtPlayerName;
     private javax.swing.JLabel txtPredatorsLeft;
+    private javax.swing.JLabel txtScore;
     // End of variables declaration//GEN-END:variables
 
     private Game game;
