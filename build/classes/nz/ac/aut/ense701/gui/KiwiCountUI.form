@@ -295,7 +295,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblKiwisCounted">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Kiwis Counted :"/>
+                    <Property name="text" type="java.lang.String" value="Unicorn Counted :"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/Records/GamePlayerRecord.java</file>
-            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/Records/DBrecords.java</file>
-            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/ScoringSystem.java</file>
-            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Game.java</file>
-            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gui/Menu.java</file>
             <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gui/HighScore.java</file>
-            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/PlayerRecord.java</file>
+            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/Records/GamePlayerRecord.java</file>
+            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/Game.java</file>
+            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gameModel/ScoringSystem.java</file>
+            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/Records/DBrecords.java</file>
+            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gui/KiwiCountUI.java</file>
+            <file>file:/C:/Users/Bonaliza/Documents/NetBeansProjects/Unicorn-Island/src/nz/ac/aut/ense701/gui/Profile.java</file>
         </group>
     </open-files>
 </project-private>
